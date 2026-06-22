@@ -1,0 +1,22 @@
+{
+    "name": "new-bongle",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+    "containerEnv": {
+        // editor dev server doesn't launch headless chrome; skip the
+        // ~150MB puppeteer download so install stays lean. drop this if
+        // you start using the capture / share features in-codespace.
+        "PUPPETEER_SKIP_DOWNLOAD": "1"
+    },
+    "onCreateCommand": "corepack enable",
+    "postCreateCommand": "npm install",
+    "postAttachCommand": "npm run edit",
+    "forwardPorts": [3002],
+    "portsAttributes": {
+        "3002": { "label": "bongle editor", "onAutoForward": "openBrowser" }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": ["biomejs.biome"]
+        }
+    }
+}
