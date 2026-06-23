@@ -2,3 +2,5 @@ node_modules
 dist
 .bongle
 tmp
+src/generated
+resources

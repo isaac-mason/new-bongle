@@ -1,55 +1,47 @@
 import {
-    addTrait,
-    CharacterControllerTrait,
-    CharacterTrait,
+    ENVIRONMENT_OVERWORLD,
     env,
     getTrait,
     matchmaking,
     onInit,
     onJoin,
-    PlayerControllerTrait,
     script,
-    setBlock,
+    setEnvironment,
+    setEnvironmentTime,
     setPosition,
-    trait,
     TransformTrait,
     use,
+    WorldTrait,
 } from 'bongle';
 import { blocks } from 'bongle/starter';
 
+// register all of the starter blocks so they show up in the editor
 use(blocks);
 
-matchmaking({ maxPlayers: 4 });
+// set the max player count for matchmaking
+matchmaking({ maxPlayers: 32 });
 
-const HelloTrait = trait('hello');
+// sky + a late-morning sun
+script(
+    WorldTrait,
+    'environment',
+    (ctx) => {
+        onInit(ctx, () => {
+            setEnvironment(ctx, ENVIRONMENT_OVERWORLD);
+            setEnvironmentTime(ctx, 9);
+        });
+    },
+    { editor: true },
+);
 
-script(HelloTrait, 'session', (ctx) => {
+// spawn position for joining players
+script(WorldTrait, 'spawn', (ctx) => {
+    // server script
     if (!env.server) return;
 
-    onInit(ctx, () => {
-        // a checkerboard platform to say hello
-        const size = 8;
-        for (let x = -size; x <= size; x++) {
-            for (let z = -size; z <= size; z++) {
-                const kind = (x + z) % 2 === 0 ? blocks.grass : blocks.stone;
-                setBlock(ctx.voxels, x, 0, z, kind.defaultKey());
-            }
-        }
-
-        // a little plinth at spawn
-        for (let x = -1; x <= 1; x++) {
-            for (let z = -1; z <= 1; z++) {
-                setBlock(ctx.voxels, x, 1, z, blocks.cobblestone.defaultKey());
-            }
-        }
-    });
-
+    // spawn position
     onJoin(ctx, ({ playerNode }) => {
         const transform = getTrait(playerNode, TransformTrait)!;
-        setPosition(transform, [0, 4, 0]);
-
-        addTrait(playerNode, CharacterControllerTrait);
-        addTrait(playerNode, CharacterTrait);
-        addTrait(playerNode, PlayerControllerTrait);
+        setPosition(transform, [0, 5, 0]);
     });
 });

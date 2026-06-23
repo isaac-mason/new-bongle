@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "nodes": {
+    "root": {
+      "realm": "shared",
+      "uuid": "597fefd8-cac2-485b-9b85-946f4939ee30",
+      "name": "Root",
+      "traits": [],
+      "children": []
+    }
+  },
+  "chunks": {
+    "-1,-1,-1": {
+      "palette": [
+        "air",
+        "starter:dirt",
+        "starter:grass",
+        "starter:grass_plant_1",
+        "starter:grass_plant_2"
+      ],
+      "blocks": "H4sIAAAAAAAAA+3LyQkAQAwCwL36r3khLYSAjxnBj7gAAAAAAACAALsyt5PtVOZ20t3W+1V/3m6X8wAgAAA=",
+      "light": "H4sIAAAAAAAAA+3RwQ0AEBAFUf1XpQQlKEEJhLsDEWRm3/GfNhOKPpW72Z6a+R6vf6FV9mezP5v92ezPZn82+7PZn83+bPZnsz+b/dnszzbu3K632V/bKlZfgjAAIAAA"
+    },
+    "0,-1,-1": {
+      "palette": [
+        "air",
+        "starter:dirt",
+        "starter:grass",
+        "starter:grass_plant_1",
+        "starter:grass_plant_2"
+      ],
+      "blocks": "H4sIAAAAAAAAA+3LqQ0AMAwEwXz91xxiHBLZMpg5uLoBAAAAAAAAlJmxrE5vK5bV6e98vfezXsG5TtsAIAAA",
+      "light": "H4sIAAAAAAAAA+3RMQ0AIBAEQfyrQgISkIAECIESuk8+2b0pr9wylFo/Xn/b3n9dfr9ysz+b/dnsz2Z/Nvuz2Z/N/mz2Z7M/m/3Z7M9mf7a7qF+52V+BJk4r+l4AIAAA"
+    },
+    "-1,-1,0": {
+      "palette": [
+        "air",
+        "starter:dirt",
+        "starter:grass",
+        "starter:grass_plant_2",
+        "starter:grass_plant_1"
+      ],
+      "blocks": "H4sIAAAAAAAAA+3OyQkAMAwDsF77z1zICimkEMlPY/AAAAAAAACgiRmp66m1InU9/zvJ/X5xgoQLtkALjAAgAAA=",
+      "light": "H4sIAAAAAAAAA+3RsQ0AIAzEwOw/FSMwAiMwAkLUoaGIhP1XfumYqRE92uPfr/+W/6plfzb7s9mfzf5s9mezP5v92ezPZn82+7PZn83+bGd1v2rZX/rcAhP26XkAIAAA"
+    },
+    "0,-1,0": {
+      "palette": [
+        "air",
+        "starter:dirt",
+        "starter:grass",
+        "starter:grass_plant_1"
+      ],
+      "blocks": "H4sIAAAAAAAAA+3OuQ0AMAwDsTz775zGE6QRbJAqr9ECAAAAAABglF1LdbJOLdXp76YP8O0BsPM4GQAgAAA=",
+      "light": "H4sIAAAAAAAAA+3RMQ3AMBAEweOPJhAMwRAMIRAiRXb5cvnF7k155ebJyMzKWxiXf/7qf23Vr172Z7M/m/3Z7M9mfzb7s9mfzf5s9mezP5v92ezPdtb1q5f9JawPjXAEmAAgAAA="
+    }
+  }
+}
